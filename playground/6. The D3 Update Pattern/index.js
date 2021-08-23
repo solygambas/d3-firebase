@@ -19,6 +19,56 @@ const xAxisGroup = graph
   .attr("transform", `translate(0, ${graphHeight})`);
 const yAxisGroup = graph.append("g");
 
+// scales
+// linear scale
+const y = d3.scaleLinear().range([graphHeight, 0]);
+// band scale
+const x = d3.scaleBand().range([0, 500]).paddingInner(0.2).paddingOuter(0.2);
+
+// create the axes
+const xAxis = d3.axisBottom(x);
+const yAxis = d3
+  .axisLeft(y)
+  .ticks(3)
+  .tickFormat((data) => data + " orders");
+// update x axis text
+xAxisGroup
+  .selectAll("text")
+  .attr("text-anchor", "end")
+  .attr("transform", "rotate(-40)")
+  .attr("fill", "darkorange");
+
+// update function
+const update = (data) => {
+  // 1. update scales (domains)
+  y.domain([0, d3.max(data, (data) => data.orders)]);
+  x.domain(data.map((item) => item.name));
+  // 2. join updated data to elements
+  const rects = graph.selectAll("rect").data(data);
+  // 3. remove unwanted shapes using the exit selection
+  rects.exit().remove();
+  // 4. update current shapes in the dom
+  rects
+    .attr("width", x.bandwidth)
+    .attr("height", (d) => graphHeight - y(d.orders))
+    .attr("fill", "orange")
+    .attr("x", (d) => x(d.name))
+    .attr("y", (d) => y(d.orders));
+  // 5. append the enter selection to the dom
+  rects
+    .enter()
+    .append("rect")
+    .attr("width", x.bandwidth)
+    .attr("height", (d) => graphHeight - y(d.orders))
+    .attr("fill", "orange")
+    .attr("x", (d) => x(d.name))
+    .attr("y", (d) => y(d.orders));
+  // call axes
+  xAxisGroup.call(xAxis);
+  yAxisGroup.call(yAxis);
+};
+
+// get data from firestore
 db.collection("dishes")
   .get()
   .then((res) => {
@@ -27,47 +77,5 @@ db.collection("dishes")
       data.push(doc.data());
     });
 
-    // min, max, extent
-    const min = d3.min(data, (data) => data.orders); // 200
-    const max = d3.max(data, (data) => data.orders); // 900
-    const extent = d3.extent(data, (data) => data.orders); // [200, 900]
-    // linear scale
-    const y = d3.scaleLinear().domain([0, max]).range([graphHeight, 0]);
-    // band scale
-    const x = d3
-      .scaleBand()
-      .domain(data.map((item) => item.name))
-      .range([0, 500])
-      .paddingInner(0.2)
-      .paddingOuter(0.2);
-    // join the data to rects
-    const rects = graph.selectAll("rect").data(data);
-    rects
-      .attr("width", x.bandwidth)
-      .attr("height", (d) => graphHeight - y(d.orders))
-      .attr("fill", "orange")
-      .attr("x", (d) => x(d.name))
-      .attr("y", (d) => y(d.orders));
-    // append the enter selection to the DOM
-    rects
-      .enter()
-      .append("rect")
-      .attr("width", x.bandwidth)
-      .attr("height", (d) => graphHeight - y(d.orders))
-      .attr("fill", "orange")
-      .attr("x", (d) => x(d.name))
-      .attr("y", (d) => y(d.orders));
-    // create and call the axes
-    const xAxis = d3.axisBottom(x);
-    const yAxis = d3
-      .axisLeft(y)
-      .ticks(3)
-      .tickFormat((data) => data + " orders");
-    xAxisGroup.call(xAxis);
-    yAxisGroup.call(yAxis);
-    xAxisGroup
-      .selectAll("text")
-      .attr("text-anchor", "end")
-      .attr("transform", "rotate(-40)")
-      .attr("fill", "darkorange");
+    update(data);
   });
