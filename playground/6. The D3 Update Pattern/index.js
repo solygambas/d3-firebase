@@ -76,6 +76,12 @@ db.collection("dishes")
     res.docs.forEach((doc) => {
       data.push(doc.data());
     });
-
     update(data);
+    d3.interval(() => {
+      // increase data
+      // data[0].orders += 50;
+      // remove data
+      data.pop();
+      update(data);
+    }, 3000);
   });
