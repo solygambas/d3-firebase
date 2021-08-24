@@ -38,6 +38,9 @@ xAxisGroup
   .attr("transform", "rotate(-40)")
   .attr("fill", "darkorange");
 
+// transition
+const customTransition = d3.transition().duration(500);
+
 // update function
 const update = (data) => {
   // 1. update scales (domains)
@@ -50,10 +53,11 @@ const update = (data) => {
   // 4. update current shapes in the dom
   rects
     .attr("width", x.bandwidth)
-    .attr("height", (d) => graphHeight - y(d.orders))
     .attr("fill", "orange")
-    .attr("x", (d) => x(d.name))
-    .attr("y", (d) => y(d.orders));
+    .attr("x", (d) => x(d.name));
+  // .transition(customTransition)
+  // .attr("y", (d) => y(d.orders))
+  // .attr("height", (d) => graphHeight - y(d.orders));
   // 5. append the enter selection to the dom
   rects
     .enter()
@@ -63,8 +67,8 @@ const update = (data) => {
     .attr("fill", "orange")
     .attr("x", (d) => x(d.name))
     .attr("y", graphHeight)
-    .transition()
-    .duration(500)
+    .merge(rects) // merge with current shapes in the DOM to avoid code duplication
+    .transition(customTransition)
     .attr("y", (d) => y(d.orders))
     .attr("height", (d) => graphHeight - y(d.orders));
   // call axes
