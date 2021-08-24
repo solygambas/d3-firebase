@@ -39,7 +39,7 @@ xAxisGroup
   .attr("fill", "darkorange");
 
 // transition
-const customTransition = d3.transition().duration(500);
+const customTransition = d3.transition().duration(1500);
 
 // update function
 const update = (data) => {
@@ -62,13 +62,14 @@ const update = (data) => {
   rects
     .enter()
     .append("rect")
-    .attr("width", x.bandwidth)
+    // .attr("width", 0) // already declared in widthTween
     .attr("height", 0)
     .attr("fill", "orange")
     .attr("x", (d) => x(d.name))
     .attr("y", graphHeight)
     .merge(rects) // merge with current shapes in the DOM to avoid code duplication
     .transition(customTransition)
+    .attrTween("width", widthTween)
     .attr("y", (d) => y(d.orders))
     .attr("height", (d) => graphHeight - y(d.orders));
   // call axes
@@ -99,3 +100,18 @@ db.collection("dishes").onSnapshot((res) => {
   });
   update(data);
 });
+
+// TWEENS
+
+const widthTween = (data) => {
+  // define interpolation
+  // if 0, return 0
+  // if 1, return x.bandwith()
+  let interpolation = d3.interpolate(0, x.bandwidth());
+  // return a function with a time ticker
+  return function (timeTicker) {
+    // passing the ticker into the interpolation
+    // between 0, start transition and 1, end transition
+    return interpolation(timeTicker);
+  };
+};
