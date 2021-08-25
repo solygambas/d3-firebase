@@ -30,7 +30,7 @@ A simple bar graph to understand D3.js basics using Firebase.
 
 ## <a name="piechart"></a>2) Pie Chart
 
-A budget planner displaying a donut chart.
+A budget planner displaying a donut chart with Materialize.
 
 [See pie-chart folder](https://github.com/solygambas/d3-firebase/tree/main/pie-chart)
 
@@ -42,6 +42,6 @@ A budget planner displaying a donut chart.
 
 ### Features
 
--
+- creating a HTML template with Materialize.
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
