@@ -1,6 +1,6 @@
 # Bar Chart
 
-A simple bar graph to understand D3.js basics.
+A simple bar graph to understand D3.js basics using Firebase.
 
 <p align="center">
         <img src="screenshot.png">

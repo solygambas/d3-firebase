@@ -2,7 +2,8 @@
 
 This repo is made of 4 projects:
 
-1. [**Bar Chart**](#barchart): A simple bar graph to understand D3.js basics.
+1. [**Bar Chart**](#barchart): A simple bar graph to understand D3.js basics using Firebase.
+2. [**Pie Chart**](#piechart): A budget planner displaying a donut chart.
 
 ## <a name="barchart"></a>1) Bar Chart
 
@@ -26,5 +27,21 @@ A simple bar graph to understand D3.js basics.
 - creating a Firestore database, setting up the Firebase config and getting data from Firestore.
 - understanding the D3 update pattern and using Firestore realtime data updates.
 - adding D3 transitions and custom tweens.
+
+## <a name="piechart"></a>2) Pie Chart
+
+A budget planner displaying a donut chart.
+
+[See pie-chart folder](https://github.com/solygambas/react-projects/tree/main/pie-chart)
+
+<!-- <p align="center">
+    <a href="https://github.com/solygambas/react-projects/tree/main/pie-chart">
+        <img src="pie-chart/screenshot.png">
+    </a>
+</p> -->
+
+### Features
+
+-
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
