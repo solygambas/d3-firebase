@@ -7,12 +7,12 @@ This repo is made of 4 projects:
 
 ## <a name="barchart"></a>1) Bar Chart
 
-A simple bar graph to understand D3.js basics.
+A simple bar graph to understand D3.js basics using Firebase.
 
-[See bar-chart folder](https://github.com/solygambas/react-projects/tree/main/bar-chart)
+[See bar-chart folder](https://github.com/solygambas/d3-firebase/tree/main/bar-chart)
 
 <p align="center">
-    <a href="https://github.com/solygambas/react-projects/tree/main/bar-chart">
+    <a href="https://github.com/solygambas/d3-firebase/tree/main/bar-chart">
         <img src="bar-chart/screenshot.png">
     </a>
 </p>
@@ -32,10 +32,10 @@ A simple bar graph to understand D3.js basics.
 
 A budget planner displaying a donut chart.
 
-[See pie-chart folder](https://github.com/solygambas/react-projects/tree/main/pie-chart)
+[See pie-chart folder](https://github.com/solygambas/d3-firebase/tree/main/pie-chart)
 
 <!-- <p align="center">
-    <a href="https://github.com/solygambas/react-projects/tree/main/pie-chart">
+    <a href="https://github.com/solygambas/d3-firebase/tree/main/pie-chart">
         <img src="pie-chart/screenshot.png">
     </a>
 </p> -->
