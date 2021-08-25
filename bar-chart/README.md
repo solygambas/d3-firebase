@@ -1,22 +1,12 @@
-# Build Data Visualizations with D3.js & Firebase
-
-This repo is made of 4 projects:
-
-1. [**Bar Chart**](#barchart): A simple bar graph to understand D3.js basics.
-
-## <a name="barchart"></a>1) Bar Chart
+# Bar Chart
 
 A simple bar graph to understand D3.js basics.
 
-[See bar-chart folder](https://github.com/solygambas/react-projects/tree/main/bar-chart)
-
 <p align="center">
-    <a href="https://github.com/solygambas/react-projects/tree/main/bar-chart">
-        <img src="bar-chart/screenshot.png">
-    </a>
+        <img src="screenshot.png">
 </p>
 
-### Features
+## Features
 
 - creating simple SVG shapes and appending them to the DOM with D3.js.
 - changing attributes with .attr() and grouping elements together.
