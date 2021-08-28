@@ -21,17 +21,31 @@ const arcPath = d3
   .outerRadius(dims.radius)
   .innerRadius(dims.radius / 2);
 
+const color = d3.scaleOrdinal(d3["schemePaired"]);
+
 // update function
 const update = (data) => {
+  // update color scale domain
+  color.domain(data.map((data) => data.name));
+
   // join enhanced (pie) data to path elements
   const paths = graph.selectAll("path").data(pie(data));
+
+  // handle the exit selection
+  paths.exit().remove();
+
+  // handle the current DOM path updates
+  paths.attr("d", (data) => arcPath(data));
+
+  // append the enter selection to the dom
   paths
     .enter()
     .append("path")
     .attr("class", "arc")
     .attr("d", (data) => arcPath(data))
     .attr("stroke", "#fff")
-    .attr("stroke-width", 3);
+    .attr("stroke-width", 3)
+    .attr("fill", (data) => color(data.data.name));
 };
 
 // handle firestore data
