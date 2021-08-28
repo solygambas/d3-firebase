@@ -57,11 +57,11 @@ A fitness tracker displaying line graphs.
 
 [See line-graphs folder](https://github.com/solygambas/d3-firebase/tree/main/line-graphs)
 
-<!-- <p align="center">
+<p align="center">
     <a href="https://github.com/solygambas/d3-firebase/tree/main/line-graphs">
         <img src="line-graphs/screenshot.png">
     </a>
-</p> -->
+</p>
 
 ### Features
 

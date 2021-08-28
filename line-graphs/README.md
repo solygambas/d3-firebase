@@ -2,9 +2,9 @@
 
 A fitness tracker displaying line graphs.
 
-<!-- <p align="center">
+<p align="center">
         <img src="screenshot.png">
-</p> -->
+</p>
 
 ## Features
 
