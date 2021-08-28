@@ -3,7 +3,8 @@
 This repo is made of 4 projects:
 
 1. [**Bar Chart**](#barchart): A simple bar graph to understand D3.js basics using Firebase.
-2. [**Pie Chart**](#piechart): A budget planner displaying a donut chart.
+2. [**Pie Chart**](#piechart): A budget planner displaying a donut chart with Materialize.
+3. [**Line Graphs**](#linegraphs): A fitness tracker displaying line graphs.
 
 ## <a name="barchart"></a>1) Bar Chart
 
@@ -49,5 +50,21 @@ A budget planner displaying a donut chart with Materialize.
 - customizing arc tween and adding legends with d3-legend.
 - handling events: mouseOver, mouseOut and click.
 - adding tooltips with d3-v6-tip.
+
+## <a name="linegraphs"></a>3) Line Graphs
+
+A fitness tracker displaying line graphs.
+
+[See line-graphs folder](https://github.com/solygambas/d3-firebase/tree/main/line-graphs)
+
+<!-- <p align="center">
+    <a href="https://github.com/solygambas/d3-firebase/tree/main/line-graphs">
+        <img src="line-graphs/screenshot.png">
+    </a>
+</p> -->
+
+### Features
+
+- creating an HTML template with Materialize.
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
