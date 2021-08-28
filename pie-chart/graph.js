@@ -23,29 +23,45 @@ const arcPath = d3
 
 const color = d3.scaleOrdinal(d3["schemePaired"]);
 
+// legend setup
+const legendGroup = svg
+  .append("g")
+  .attr("transform", `translate(${dims.width + 40}, 10)`);
+
+const legend = d3.legendColor().shape("circle").shapePadding(10).scale(color);
+
 // update function
 const update = (data) => {
   // update color scale domain
   color.domain(data.map((data) => data.name));
 
+  // update and call legend
+  legendGroup.call(legend);
+  legendGroup.selectAll("text").attr("class", "legend").attr("fill", "white");
+
   // join enhanced (pie) data to path elements
   const paths = graph.selectAll("path").data(pie(data));
 
   // handle the exit selection
-  paths.exit().remove();
+  paths.exit().transition().duration(750).attrTween("d", arcTweenExit).remove();
 
   // handle the current DOM path updates
-  paths.attr("d", (data) => arcPath(data));
+  paths.transition().duration(750).attrTween("d", arcTweenUpdate);
 
   // append the enter selection to the dom
   paths
     .enter()
     .append("path")
     .attr("class", "arc")
-    .attr("d", (data) => arcPath(data))
     .attr("stroke", "#fff")
     .attr("stroke-width", 3)
-    .attr("fill", (data) => color(data.data.name));
+    .attr("fill", (data) => color(data.data.name))
+    .each(function (data) {
+      this._current = data; // save entering data in a new property
+    })
+    .transition()
+    .duration(750)
+    .attrTween("d", arcTweenEnter);
 };
 
 // handle firestore data
@@ -72,3 +88,27 @@ db.collection("expenses").onSnapshot((res) => {
   });
   update(data);
 });
+
+const arcTweenEnter = (data) => {
+  let interpolation = d3.interpolate(data.endAngle, data.startAngle);
+  return function (ticker) {
+    data.startAngle = interpolation(ticker);
+    return arcPath(data);
+  };
+};
+
+const arcTweenExit = (data) => {
+  let interpolation = d3.interpolate(data.startAngle, data.endAngle);
+  return function (ticker) {
+    data.startAngle = interpolation(ticker);
+    return arcPath(data);
+  };
+};
+
+function arcTweenUpdate(data) {
+  let interpolation = d3.interpolate(this._current, data);
+  this._current = interpolation(1); // = data
+  return function (ticker) {
+    return arcPath(interpolation(ticker));
+  };
+}
