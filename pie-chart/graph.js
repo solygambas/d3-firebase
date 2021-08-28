@@ -62,6 +62,13 @@ const update = (data) => {
     .transition()
     .duration(750)
     .attrTween("d", arcTweenEnter);
+
+  // add events
+  graph
+    .selectAll("path")
+    .on("mouseover", handleMouseOver)
+    .on("mouseout", handleMouseOut)
+    .on("click", handleClick);
 };
 
 // handle firestore data
@@ -112,3 +119,23 @@ function arcTweenUpdate(data) {
     return arcPath(interpolation(ticker));
   };
 }
+
+// event handlers
+const handleMouseOver = (event, data) => {
+  d3.select(event.currentTarget)
+    .transition("changeSliceFill") // give a name to avoid render issues with custom tween
+    .duration(300)
+    .attr("fill", "white");
+};
+
+const handleMouseOut = (event, data) => {
+  d3.select(event.currentTarget)
+    .transition("changeSliceFill")
+    .duration(300)
+    .attr("fill", color(data.data.name));
+};
+
+const handleClick = (event, data) => {
+  const id = data.data.id;
+  db.collection("expenses").doc(id).delete();
+};

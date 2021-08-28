@@ -13,5 +13,6 @@ A budget planner displaying a donut chart with Materialize.
 - setting up a pie chart and generating arc paths with D3.
 - generating colors with ordinal scales.
 - customizing arc tween and adding legends with d3-legend.
+- handling events: mouseOver, mouseOut and click.
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
