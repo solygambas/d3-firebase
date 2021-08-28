@@ -7,6 +7,22 @@ header {
   margin-bottom: 40px;
 }
 
-.legend {
+.legend,
+.tip .name {
   text-transform: capitalize;
+}
+
+.tip {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.tip .cost {
+  font-weight: 700;
+}
+
+.tip .delete {
+  color: hotpink;
+  font-size: 0.8em;
 }

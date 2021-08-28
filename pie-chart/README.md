@@ -2,9 +2,9 @@
 
 A budget planner displaying a donut chart with Materialize.
 
-<!-- <p align="center">
+<p align="center">
         <img src="screenshot.png">
-</p> -->
+</p>
 
 ## Features
 
@@ -14,5 +14,6 @@ A budget planner displaying a donut chart with Materialize.
 - generating colors with ordinal scales.
 - customizing arc tween and adding legends with d3-legend.
 - handling events: mouseOver, mouseOut and click.
+- adding tooltips with d3-v6-tip.
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
