@@ -20,10 +20,35 @@ const tree = d3.tree().size([dimensions.width, dimensions.height]);
 const update = (data) => {
   // get updated root node data
   const rootNode = stratify(data);
+
   // get x and y positions for each node
   const treeData = tree(rootNode);
+
   // get nodes and join data
   const nodes = graph.selectAll(".node").data(treeData.descendants());
+
+  // create enter node groups
+  const enterNodes = nodes
+    .enter()
+    .append("g")
+    .attr("class", "node")
+    .attr("transform", (data) => `translate(${data.x}, ${data.y})`);
+
+  // append rects to enter nodes
+  enterNodes
+    .append("rect")
+    .attr("fill", "#aaa")
+    .attr("stroke", "#555")
+    .attr("stroke-width", 2)
+    .attr("height", 50)
+    .attr("width", (data) => data.data.name.length * 20);
+
+  // append name text
+  enterNodes
+    .append("text")
+    .attr("text-anchor", "middle")
+    .attr("fill", "white")
+    .text((data) => data.data.name);
 };
 
 // handle firestore data
