@@ -1,10 +1,12 @@
 # Build Data Visualizations with D3.js & Firebase
 
-This repo is made of 4 projects:
+This repo is made of 5 projects:
 
 1. [**Bar Chart**](#barchart): A simple bar graph to understand D3.js basics using Firebase.
 2. [**Pie Chart**](#piechart): A budget planner displaying a donut chart with Materialize.
 3. [**Line Graphs**](#linegraphs): A fitness tracker displaying line graphs.
+4. [**Bubble Chart**](#bubblechart): A circle packing diagram to learn data hierarchy.
+5. [**Tree Diagram**](#treediagram): ...
 
 ## <a name="barchart"></a>1) Bar Chart
 
@@ -70,5 +72,37 @@ A fitness tracker displaying line graphs.
 - using time scales and formatting dates with D3.
 - filtering data by activity and sorting data by date.
 - generating line paths and adding data point hover effect.
+
+## <a name="bubblechart"></a>4) Bubble Chart
+
+A circle packing diagram to learn data hierarchy.
+
+[See bubble-chart folder](https://github.com/solygambas/d3-firebase/tree/main/bubble-chart)
+
+<!-- <p align="center">
+    <a href="https://github.com/solygambas/d3-firebase/tree/main/bubble-chart">
+        <img src="bubble-chart/screenshot.png">
+    </a>
+</p> -->
+
+### Features
+
+- handling data hierarchy in D3 with stratify() method.
+
+## <a name="treediagram"></a>5) Tree Diagram
+
+...
+
+[See tree-diagram folder](https://github.com/solygambas/d3-firebase/tree/main/tree-diagram)
+
+<!-- <p align="center">
+    <a href="https://github.com/solygambas/d3-firebase/tree/main/tree-diagram">
+        <img src="tree-diagram/screenshot.png">
+    </a>
+</p> -->
+
+### Features
+
+-
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
