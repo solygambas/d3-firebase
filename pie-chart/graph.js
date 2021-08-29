@@ -1,11 +1,11 @@
-const dims = { height: 300, width: 300, radius: 150 };
-const cent = { x: dims.width / 2 + 5, y: dims.height / 2 + 5 };
+const dimensions = { height: 300, width: 300, radius: 150 };
+const cent = { x: dimensions.width / 2 + 5, y: dimensions.height / 2 + 5 };
 
 const svg = d3
   .select(".canvas")
   .append("svg")
-  .attr("width", dims.width + 150)
-  .attr("height", dims.height + 150);
+  .attr("width", dimensions.width + 150)
+  .attr("height", dimensions.height + 150);
 
 const graph = svg
   .append("g")
@@ -18,15 +18,15 @@ const pie = d3
 
 const arcPath = d3
   .arc()
-  .outerRadius(dims.radius)
-  .innerRadius(dims.radius / 2);
+  .outerRadius(dimensions.radius)
+  .innerRadius(dimensions.radius / 2);
 
 const color = d3.scaleOrdinal(d3["schemePaired"]);
 
 // legend setup
 const legendGroup = svg
   .append("g")
-  .attr("transform", `translate(${dims.width + 40}, 10)`);
+  .attr("transform", `translate(${dimensions.width + 40}, 10)`);
 
 const legend = d3.legendColor().shape("circle").shapePadding(10).scale(color);
 
