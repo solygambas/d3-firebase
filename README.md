@@ -79,17 +79,19 @@ A circle packing diagram to learn data hierarchy.
 
 [See bubble-chart folder](https://github.com/solygambas/d3-firebase/tree/main/bubble-chart)
 
-<!-- <p align="center">
+<p align="center">
     <a href="https://github.com/solygambas/d3-firebase/tree/main/bubble-chart">
         <img src="bubble-chart/screenshot.png">
     </a>
-</p> -->
+</p>
 
 ### Features
 
 - handling data hierarchy in D3 with stratify() method.
 - adding value property to nodes with sum().
 - creating circle packs with pack() and descendants().
+- displaying tags in node leaves.
+- generating colors according to node depth.
 
 ## <a name="treediagram"></a>5) Tree Diagram
 

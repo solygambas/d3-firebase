@@ -30,7 +30,7 @@ const svg = d3
   .attr("height", 800);
 
 // create graph group with margin
-const graph = svg.append("g").attr("transform", "translate(50, 50)");
+const graph = svg.append("g").attr("transform", "translate(0, 50)");
 
 // create stratify
 const stratify = d3
@@ -47,4 +47,30 @@ const pack = d3.pack().size([960, 700]).padding(5);
 // convert back to an array format
 const bubbleData = pack(rootNode).descendants();
 
+// create ordinal scale
+const color = d3.scaleOrdinal(["#caf0f8", "#90e0ef", "#00b4d8"]);
+
 // join data and add group for each node
+const nodes = graph
+  .selectAll("g")
+  .data(bubbleData)
+  .enter()
+  .append("g")
+  .attr("transform", (data) => `translate(${data.x}, ${data.y})`);
+
+nodes
+  .append("circle")
+  .attr("r", (data) => data.r)
+  .attr("stroke", "white")
+  .attr("stroke-width", 2)
+  .attr("fill", (data) => color(data.depth)); // according to depth
+
+// add text to node leaves
+nodes
+  .filter((data) => !data.children)
+  .append("text")
+  .attr("text-anchor", "middle")
+  .attr("dy", "0.3em")
+  .attr("fill", "white")
+  .style("font-size", (data) => data.value * 5) // according to the value
+  .text((data) => data.data.name);
