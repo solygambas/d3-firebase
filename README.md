@@ -99,11 +99,11 @@ A hierarchical chart using Materialize.
 
 [See tree-diagram folder](https://github.com/solygambas/d3-firebase/tree/main/tree-diagram)
 
-<!-- <p align="center">
+<p align="center">
     <a href="https://github.com/solygambas/d3-firebase/tree/main/tree-diagram">
         <img src="tree-diagram/screenshot.png">
     </a>
-</p> -->
+</p>
 
 ### Features
 

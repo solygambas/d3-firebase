@@ -2,9 +2,9 @@
 
 A hierarchical chart using Materialize.
 
-<!-- <p align="center">
+<p align="center">
         <img src="screenshot.png">
-</p> -->
+</p>
 
 ## Features
 

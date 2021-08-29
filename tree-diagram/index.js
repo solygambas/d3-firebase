@@ -8,12 +8,14 @@ const department = document.querySelector("#department");
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  db.collection("employees").add({
-    name: name.value,
-    parent: parent.value,
-    department: department.value,
-  });
-  let instance = M.Modal.getInstance(modal);
-  instance.close();
-  form.reset();
+  if (name.value && parent.value && department.value) {
+    db.collection("employees").add({
+      name: name.value,
+      parent: parent.value,
+      department: department.value,
+    });
+    let instance = M.Modal.getInstance(modal);
+    instance.close();
+    form.reset();
+  }
 });

@@ -15,6 +15,14 @@ text {
   font-size: 22px;
 }
 
+.darkblue {
+  background-color: #071233 !important;
+}
+
+.darkblue-text {
+  color: #071233 !important;
+}
+
 .header {
   position: relative;
 }
