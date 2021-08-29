@@ -1,0 +1,28 @@
+body {
+  background-color: #fbfbfb;
+}
+
+h2,
+text {
+  font-family: "Bebas Neue", cursive;
+}
+
+h2 {
+  margin: 0 0 10px;
+}
+
+text {
+  font-size: 22px;
+}
+
+.header {
+  position: relative;
+}
+
+.modal {
+  max-width: 500px;
+}
+
+.canvas {
+  margin-top: 40px;
+}

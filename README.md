@@ -6,7 +6,7 @@ This repo is made of 5 projects:
 2. [**Pie Chart**](#piechart): A budget planner displaying a donut chart with Materialize.
 3. [**Line Graphs**](#linegraphs): A fitness tracker displaying line graphs.
 4. [**Bubble Chart**](#bubblechart): A circle packing diagram to learn data hierarchy.
-5. [**Tree Diagram**](#treediagram): ...
+5. [**Tree Diagram**](#treediagram): A hierarchical chart using Materialize.
 
 ## <a name="barchart"></a>1) Bar Chart
 
@@ -95,7 +95,7 @@ A circle packing diagram to learn data hierarchy.
 
 ## <a name="treediagram"></a>5) Tree Diagram
 
-...
+A hierarchical chart using Materialize.
 
 [See tree-diagram folder](https://github.com/solygambas/d3-firebase/tree/main/tree-diagram)
 
@@ -107,6 +107,6 @@ A circle packing diagram to learn data hierarchy.
 
 ### Features
 
--
+- creating an HTML template and a modal with Materialize.
 
 Based on [Build Data Visualizations with D3.js & Firebase](https://www.udemy.com/course/build-data-uis-with-d3-firebase/) by Shaun Pelling - The Net Ninja (2019)
