@@ -22,9 +22,29 @@ const data = [
   { name: "classical", parent: "music", amount: 5 },
 ];
 
+// create svg
+const svg = d3
+  .select(".canvas")
+  .append("svg")
+  .attr("width", 1060)
+  .attr("height", 800);
+
+// create graph group with margin
+const graph = svg.append("g").attr("transform", "translate(50, 50)");
+
+// create stratify
 const stratify = d3
   .stratify()
   .id((data) => data.name)
   .parentId((data) => data.parent);
 
-console.log(stratify(data));
+// add value property to nodes
+const rootNode = stratify(data).sum((data) => data.amount);
+
+// add radius, x and y
+const pack = d3.pack().size([960, 700]).padding(5);
+
+// convert back to an array format
+const bubbleData = pack(rootNode).descendants();
+
+// join data and add group for each node

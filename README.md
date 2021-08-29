@@ -88,6 +88,8 @@ A circle packing diagram to learn data hierarchy.
 ### Features
 
 - handling data hierarchy in D3 with stratify() method.
+- adding value property to nodes with sum().
+- creating circle packs with pack() and descendants().
 
 ## <a name="treediagram"></a>5) Tree Diagram
 
