@@ -1,12 +1,14 @@
 # Build Data Visualizations with D3.js & Firebase
 
-This repo is made of 5 projects:
+5 small projects to understand D3.js basics using Firebase and Materialize.
 
-1. [**Bar Chart**](#barchart): A simple bar graph to understand D3.js basics using Firebase.
-2. [**Pie Chart**](#piechart): A budget planner displaying a donut chart with Materialize.
-3. [**Line Graphs**](#linegraphs): A fitness tracker displaying line graphs.
-4. [**Bubble Chart**](#bubblechart): A circle packing diagram to learn data hierarchy.
-5. [**Tree Diagram**](#treediagram): A hierarchical chart using Materialize.
+| #   | Project                           | Description                                           |
+| --- | --------------------------------- | ----------------------------------------------------- |
+| 01  | [**Bar Chart**](#barchart) | A simple bar graph to understand D3.js basics using Firebase.               |
+| 02  | [**Pie Chart**](#piechart)        | A budget planner displaying a donut chart with Materialize.           |
+| 03  | [**Line Graphs**](#linegraphs)     | A fitness tracker displaying line graphs.                                 |
+| 04  | [**Bubble Chart**](#bubblechart)    | A circle packing diagram to learn data hierarchy.                     |
+| 05  | [**Tree Diagram**](#treediagram)          | A hierarchical chart using Materialize.                  |
 
 ## <a name="barchart"></a>1) Bar Chart
 
