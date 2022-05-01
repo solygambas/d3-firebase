@@ -2,22 +2,22 @@
 
 5 small projects to understand D3.js basics using Firebase and Materialize.
 
-| #   | Project                           | Description                                           |
-| --- | --------------------------------- | ----------------------------------------------------- |
-| 01  | [**Bar Chart**](#barchart) | A simple bar graph to understand D3.js basics using Firebase.               |
-| 02  | [**Pie Chart**](#piechart)        | A budget planner displaying a donut chart with Materialize.           |
-| 03  | [**Line Graphs**](#linegraphs)     | A fitness tracker displaying line graphs.                                 |
-| 04  | [**Bubble Chart**](#bubblechart)    | A circle packing diagram to learn data hierarchy.                     |
-| 05  | [**Tree Diagram**](#treediagram)          | A hierarchical chart using Materialize.                  |
+| #   | Project                          | Description                                                   |
+| --- | -------------------------------- | ------------------------------------------------------------- |
+| 01  | [**Bar Chart**](#barchart)       | A simple bar graph to understand D3.js basics using Firebase. |
+| 02  | [**Pie Chart**](#piechart)       | A budget planner displaying a donut chart with Materialize.   |
+| 03  | [**Line Graphs**](#linegraphs)   | A fitness tracker displaying line graphs.                     |
+| 04  | [**Bubble Chart**](#bubblechart) | A circle packing diagram to learn data hierarchy.             |
+| 05  | [**Tree Diagram**](#treediagram) | A hierarchical chart using Materialize.                       |
 
 ## <a name="barchart"></a>1) Bar Chart
 
 A simple bar graph to understand D3.js basics using Firebase.
 
-[See bar-chart folder](https://github.com/solygambas/d3-firebase/tree/main/bar-chart)
+[See bar-chart folder](bar-chart)
 
 <p align="center">
-    <a href="https://github.com/solygambas/d3-firebase/tree/main/bar-chart">
+    <a href="bar-chart">
         <img src="bar-chart/screenshot.png">
     </a>
 </p>
@@ -37,10 +37,10 @@ A simple bar graph to understand D3.js basics using Firebase.
 
 A budget planner displaying a donut chart with Materialize.
 
-[See pie-chart folder](https://github.com/solygambas/d3-firebase/tree/main/pie-chart)
+[See pie-chart folder](pie-chart)
 
 <p align="center">
-    <a href="https://github.com/solygambas/d3-firebase/tree/main/pie-chart">
+    <a href="pie-chart">
         <img src="pie-chart/screenshot.png">
     </a>
 </p>
@@ -59,10 +59,10 @@ A budget planner displaying a donut chart with Materialize.
 
 A fitness tracker displaying line graphs.
 
-[See line-graphs folder](https://github.com/solygambas/d3-firebase/tree/main/line-graphs)
+[See line-graphs folder](line-graphs)
 
 <p align="center">
-    <a href="https://github.com/solygambas/d3-firebase/tree/main/line-graphs">
+    <a href="line-graphs">
         <img src="line-graphs/screenshot.png">
     </a>
 </p>
@@ -79,10 +79,10 @@ A fitness tracker displaying line graphs.
 
 A circle packing diagram to learn data hierarchy.
 
-[See bubble-chart folder](https://github.com/solygambas/d3-firebase/tree/main/bubble-chart)
+[See bubble-chart folder](bubble-chart)
 
 <p align="center">
-    <a href="https://github.com/solygambas/d3-firebase/tree/main/bubble-chart">
+    <a href="bubble-chart">
         <img src="bubble-chart/screenshot.png">
     </a>
 </p>
@@ -99,10 +99,10 @@ A circle packing diagram to learn data hierarchy.
 
 A hierarchical chart using Materialize.
 
-[See tree-diagram folder](https://github.com/solygambas/d3-firebase/tree/main/tree-diagram)
+[See tree-diagram folder](tree-diagram)
 
 <p align="center">
-    <a href="https://github.com/solygambas/d3-firebase/tree/main/tree-diagram">
+    <a href="tree-diagram">
         <img src="tree-diagram/screenshot.png">
     </a>
 </p>
